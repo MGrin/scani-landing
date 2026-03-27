@@ -1,18 +1,15 @@
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  BarChart3,
+  Briefcase,
   CheckCircle,
   Code2,
-  CreditCard,
   Globe,
-  Key,
+  Mail,
   Menu,
-  Monitor,
-  Network,
-  ScanSearch,
+  PenLine,
+  Sparkles,
   Users,
-  Wallet,
   X,
   Zap,
 } from 'lucide-react';
@@ -43,11 +40,10 @@ function FadeIn({
 }
 
 const NAV_LINKS = [
-  { label: 'Web App', href: '#webapp' },
-  { label: 'For Agents', href: '#for-agents' },
-  { label: 'Integrations', href: '#integrations' },
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Services', href: '#services' },
+  { label: 'How it works', href: '#how-it-works' },
+  { label: 'Platforms', href: '#platforms' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function App() {
@@ -94,13 +90,12 @@ export default function App() {
                 {l.label}
               </a>
             ))}
-            <button
-              type="button"
-              onClick={() => window.open('https://app.scani.xyz', '_blank')}
+            <a
+              href="#contact"
               className="text-sm bg-gray-900 text-white px-4 py-1.5 rounded-lg hover:bg-gray-700 transition-colors font-semibold"
             >
-              Open app
-            </button>
+              Hire us
+            </a>
           </div>
 
           <button
@@ -125,23 +120,19 @@ export default function App() {
                 {l.label}
               </a>
             ))}
-            <button
-              type="button"
-              onClick={() => {
-                setMenuOpen(false);
-                window.open('https://app.scani.xyz', '_blank');
-              }}
-              className="w-full mt-2 text-sm bg-gray-900 text-white px-4 py-2.5 rounded-lg hover:bg-gray-700 transition-colors font-semibold"
+            <a
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="block w-full mt-2 text-sm bg-gray-900 text-white px-4 py-2.5 rounded-lg hover:bg-gray-700 transition-colors font-semibold text-center"
             >
-              Open app
-            </button>
+              Hire us
+            </a>
           </div>
         )}
       </nav>
 
       {/* ── HERO ── */}
       <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* subtle radial glow */}
         <div
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
@@ -156,9 +147,9 @@ export default function App() {
             transition={{ duration: 0.45 }}
             className="mb-5"
           >
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse" />
-              Beta — free to use
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">
+              <Sparkles className="w-3 h-3" />
+              AI-powered agency
             </span>
           </motion.div>
 
@@ -168,9 +159,9 @@ export default function App() {
             transition={{ duration: 0.45, delay: 0.06 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.05] mb-6"
           >
-            Your finances,
+            We build.
             <br />
-            <span className="text-indigo-600">queryable by AI.</span>
+            <span className="text-indigo-600">You grow.</span>
           </motion.h1>
 
           <motion.p
@@ -179,9 +170,9 @@ export default function App() {
             transition={{ duration: 0.45, delay: 0.12 }}
             className="text-xl text-gray-500 max-w-2xl leading-relaxed mb-10"
           >
-            Scani aggregates crypto exchanges, blockchain wallets, and traditional investments into
-            one place. Use it as a full-featured web app — or let AI agents query and manage your
-            portfolio through MCP. Seamless data handoff between humans and AI.
+            Scani is an AI-powered agency that delivers dev work, copywriting, design, and more —
+            faster and at higher quality than a traditional team. Hire us on Upwork, Fiverr, or
+            directly.
           </motion.p>
 
           <motion.div
@@ -190,19 +181,18 @@ export default function App() {
             transition={{ duration: 0.45, delay: 0.18 }}
             className="flex flex-col sm:flex-row gap-3"
           >
-            <button
-              type="button"
-              onClick={() => window.open('https://app.scani.xyz', '_blank')}
+            <a
+              href="#contact"
               className="group inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-7 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-700 transition-colors shadow-sm"
             >
-              Get started — it's free
+              Get a quote
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </button>
+            </a>
             <a
-              href="#for-agents"
+              href="#services"
               className="inline-flex items-center justify-center gap-2 bg-white text-gray-700 px-7 py-3.5 rounded-xl text-base font-semibold border border-gray-200 hover:bg-gray-50 transition-colors"
             >
-              MCP for agents
+              See what we do
             </a>
           </motion.div>
 
@@ -212,72 +202,66 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.28 }}
             className="mt-10 flex flex-wrap gap-5 text-sm text-gray-500"
           >
-            {['No credit card required', 'Web app + MCP server', 'Human ↔ Agent data handoff'].map(
-              (item) => (
-                <span key={item} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                  {item}
-                </span>
-              )
-            )}
+            {['AI-powered delivery', 'Fast turnaround', 'Quality guaranteed'].map((item) => (
+              <span key={item} className="flex items-center gap-1.5">
+                <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                {item}
+              </span>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ── WEB APP ── */}
-      <section id="webapp" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      {/* ── SERVICES ── */}
+      <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-2 mb-4">
-              <Monitor className="w-4 h-4 text-gray-500" />
+              <Briefcase className="w-4 h-4 text-gray-500" />
               <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">
-                Web App
+                Services
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 max-w-2xl leading-tight">
-              Your finances, one dashboard
+              What we deliver
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl leading-relaxed mb-14">
-              Open{' '}
-              <a
-                href="https://app.scani.xyz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-gray-700 underline underline-offset-2 hover:text-gray-900 transition-colors"
-              >
-                app.scani.xyz
-              </a>{' '}
-              — your entire portfolio in one place. Crypto exchanges, blockchain wallets, and
-              AI-parsed brokerage screenshots, all in a single dashboard you own and control.
+              From full-stack development to polished copy — we handle the work so you can focus on
+              growing your business.
             </p>
           </FadeIn>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
-                icon: BarChart3,
-                title: 'Asset allocation',
-                body: 'Break down your portfolio by token, asset type, account, institution, or geography. Interactive charts.',
+                icon: Code2,
+                title: 'Development',
+                body: 'Web apps, APIs, automation scripts, browser extensions. Full-stack or backend-only — we ship clean, production-ready code.',
+              },
+              {
+                icon: PenLine,
+                title: 'Copywriting',
+                body: 'Landing pages, email sequences, product descriptions, blog content. Persuasive copy that converts.',
+              },
+              {
+                icon: Sparkles,
+                title: 'AI integrations',
+                body: 'Add AI capabilities to your existing product — chatbots, summarization, classification, data extraction. We build the integration end-to-end.',
               },
               {
                 icon: Globe,
-                title: 'Multi-currency',
-                body: 'Track everything in your chosen base currency. Automatic exchange rates. Switch at any time.',
+                title: 'Web scraping & data',
+                body: 'Custom scrapers, data pipelines, and structured datasets. Get the data you need from any public source.',
               },
               {
-                icon: Network,
-                title: 'Universal price tracking',
-                body: 'Stocks, ETFs, and crypto — priced globally. CEX feeds, DEX pricing, and traditional market data in one place.',
-              },
-              {
-                icon: ScanSearch,
-                title: 'AI screenshot import',
-                body: "No native integration for your broker? Upload a screenshot — AI parses it and creates all holdings automatically.",
+                icon: Zap,
+                title: 'Automation',
+                body: 'Eliminate repetitive tasks. We build workflows that connect your tools and run without you.',
               },
               {
                 icon: Users,
-                title: 'Human ↔ Agent handoff',
-                body: 'Agents populate your portfolio, you review and refine it through the UI. Seamless data ownership between humans and AI.',
+                title: 'Other work',
+                body: 'Have something else in mind? We take on diverse projects. Reach out and tell us what you need.',
               },
             ].map((feature, i) => (
               <FadeIn key={feature.title} delay={i * 0.04}>
@@ -291,23 +275,12 @@ export default function App() {
               </FadeIn>
             ))}
           </div>
-
-          <FadeIn delay={0.1} className="mt-10 flex justify-center">
-            <button
-              type="button"
-              onClick={() => window.open('https://app.scani.xyz', '_blank')}
-              className="group inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-gray-700 transition-colors"
-            >
-              Open web app — it's free
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </button>
-          </FadeIn>
         </div>
       </section>
 
-      {/* ── FOR AGENTS ── */}
+      {/* ── HOW IT WORKS ── */}
       <section
-        id="for-agents"
+        id="how-it-works"
         className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-950 text-white relative overflow-hidden"
       >
         <div
@@ -320,122 +293,61 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-2 mb-4">
-              <Code2 className="w-4 h-4 text-indigo-400" />
+              <Zap className="w-4 h-4 text-indigo-400" />
               <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest">
-                Agentic-ready
+                Process
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 max-w-2xl leading-tight">
-              Built for the age of AI agents
+              Simple from brief to shipped
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl leading-relaxed mb-14">
-              Scani ships with a full MCP (Model Context Protocol) server. Any AI agent — Claude,
-              GPT, your own LLM — can authenticate, query your portfolio, and manage your financial
-              data programmatically. Agentic access is gated behind an{' '}
-              <span className="text-indigo-300 font-semibold">x402 paywall</span> — agents pay
-              micro-fees per tool call, no subscription required.
+              Three steps. No drawn-out onboarding, no endless calls. Just fast, quality delivery.
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <FadeIn>
-              <div className="rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden h-full">
-                <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-800">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
-                  <span className="ml-2 text-xs text-gray-500 font-mono">
-                    claude_desktop_config.json
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                step: '01',
+                title: 'You brief us',
+                body: 'Tell us what you need — project scope, goals, deadline. A short message is enough to get started.',
+              },
+              {
+                step: '02',
+                title: 'We deliver',
+                body: 'Our AI-powered team gets to work. We keep you updated and ask clarifying questions when needed. Fast turnaround.',
+              },
+              {
+                step: '03',
+                title: 'You ship',
+                body: 'Review the output, request revisions if needed, then ship. We hand over everything — code, copy, files — ready to use.',
+              },
+            ].map((item, i) => (
+              <FadeIn key={item.step} delay={i * 0.07}>
+                <div className="rounded-2xl bg-gray-900 border border-gray-800 p-7 h-full">
+                  <span className="text-4xl font-extrabold text-indigo-500/40 leading-none block mb-4">
+                    {item.step}
                   </span>
+                  <h3 className="font-semibold text-white text-lg mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.body}</p>
                 </div>
-                <div className="overflow-x-auto">
-                  <pre className="p-5 text-sm font-mono text-gray-300 leading-relaxed whitespace-pre">
-                    {`{
-  "mcpServers": {
-    "scani": {
-      "url": "https://api.scani.xyz/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
-    }
-  }
-}`}
-                  </pre>
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.05}>
-              <div className="space-y-5">
-                {[
-                  {
-                    icon: Key,
-                    title: 'Self-registration',
-                    body: 'Agents call agent_register to self-issue an API key. Link the agent to your Scani account once to grant it access. Revoke any key at any time.',
-                  },
-                  {
-                    icon: Code2,
-                    title: 'Comprehensive MCP API',
-                    body: 'Full CRUD for accounts, holdings, institutions, blockchain wallets, and tokens. Dashboard summary and asset allocation — all via MCP.',
-                  },
-                  {
-                    icon: Users,
-                    title: 'Human-in-the-loop',
-                    body: 'Agents create and manage your portfolio data. You review, edit, and take full ownership through the web UI.',
-                  },
-                  {
-                    icon: Zap,
-                    title: 'Batch operations',
-                    body: 'Create holdings with all dependencies in one call. Efficient for AI agents that need to populate your portfolio quickly.',
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="w-9 h-9 rounded-xl bg-indigo-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <item.icon className="w-4 h-4 text-indigo-400" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">{item.body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
+              </FadeIn>
+            ))}
           </div>
-
-          <FadeIn>
-            <div className="rounded-2xl border border-indigo-500/30 bg-indigo-950/40 p-6 flex flex-col sm:flex-row sm:items-center gap-4">
-              <div className="flex-1">
-                <p className="text-sm font-semibold text-indigo-300 mb-1">MCP endpoint</p>
-                <code className="text-white font-mono text-sm">https://api.scani.xyz/mcp</code>
-                <p className="text-gray-500 text-sm mt-1">
-                  Compatible with Claude Desktop, Cursor, and any MCP-capable client.
-                </p>
-              </div>
-              <a
-                href="https://app.scani.xyz/settings"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-              >
-                Get API key
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
-      {/* ── INTEGRATIONS ── */}
-      <section id="integrations" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* ── PLATFORMS ── */}
+      <section id="platforms" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
-                Connect your accounts
+                Work with us anywhere
               </h2>
               <p className="text-gray-500 text-lg max-w-2xl leading-relaxed">
-                Scani pulls in data from where you actually keep your money.
+                Hire us through the platform you already use — or reach out directly.
               </p>
             </div>
           </FadeIn>
@@ -443,30 +355,22 @@ export default function App() {
           <div className="grid md:grid-cols-3 gap-5 mb-8">
             {[
               {
-                icon: Wallet,
-                label: 'Live',
-                title: 'Crypto exchanges',
-                desc: 'Direct API connection — balances sync automatically.',
-                items: ['Binance', 'Kraken'],
+                icon: Globe,
+                title: 'Upwork',
+                desc: 'Find us on Upwork for managed contracts with escrow protection. Great for longer projects.',
+                badge: 'Available',
               },
               {
-                icon: Network,
-                label: 'Live',
-                title: 'Blockchain wallets',
-                desc: 'Paste a public address, Scani imports all holdings.',
-                items: ['Bitcoin', 'Ethereum + all EVM chains', 'Solana', 'TON', 'TRON'],
+                icon: Zap,
+                title: 'Fiverr',
+                desc: 'Order fixed-scope deliverables fast. Ideal for well-defined, one-off tasks.',
+                badge: 'Available',
               },
               {
-                icon: ScanSearch,
-                label: 'Live',
-                title: 'Any institution via screenshots',
-                desc: 'Upload a portfolio screenshot from any broker, bank, or app — AI reads it and creates all holdings.',
-                items: [
-                  'Any broker worldwide',
-                  'Any bank or brokerage statement',
-                  'Any portfolio page or app',
-                  'Powered by AI vision',
-                ],
+                icon: Mail,
+                title: 'Direct contract',
+                desc: 'Prefer to work outside a platform? Reach out directly for a custom agreement and faster communication.',
+                badge: 'Preferred',
               },
             ].map((card, i) => (
               <FadeIn key={card.title} delay={i * 0.05}>
@@ -476,54 +380,28 @@ export default function App() {
                       <card.icon className="w-5 h-5 text-gray-700" />
                     </div>
                     <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                      {card.label}
+                      {card.badge}
                     </span>
                   </div>
                   <h3 className="font-semibold text-gray-900 mb-2">{card.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{card.desc}</p>
-                  <ul className="space-y-1.5">
-                    {card.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                        <span className="w-1 h-1 rounded-full bg-gray-400 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-gray-500 text-sm leading-relaxed">{card.desc}</p>
                 </div>
               </FadeIn>
             ))}
           </div>
-
-          <FadeIn>
-            <div className="rounded-2xl bg-gray-50 border border-gray-200 p-7 flex items-start gap-5">
-              <div className="w-11 h-11 rounded-xl bg-gray-900 flex items-center justify-center flex-shrink-0">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">
-                  Universal coverage, zero integrations
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
-                  Scani doesn't need a native integration with every institution. Take a screenshot
-                  of any portfolio page — from any broker, bank, or app worldwide — and AI creates
-                  all holdings automatically. Works everywhere, instantly.
-                </p>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
-      {/* ── FEATURES ── */}
-      <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      {/* ── WHY US ── */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
-                What you actually get
+                Why Scani
               </h2>
               <p className="text-gray-500 text-lg max-w-2xl">
-                A straightforward list of what works today.
+                We're not a traditional agency. AI is at the core of how we work.
               </p>
             </div>
           </FadeIn>
@@ -531,34 +409,34 @@ export default function App() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
-                icon: BarChart3,
-                title: 'Asset allocation',
-                body: 'Break down your portfolio by token, asset type, account, institution, or geography. Interactive charts.',
+                icon: Zap,
+                title: 'Fast delivery',
+                body: 'AI-assisted workflows mean we move faster than a traditional team. Days, not weeks.',
               },
               {
-                icon: Globe,
-                title: 'Multi-currency',
-                body: 'Track everything in your chosen base currency. Automatic exchange rates. Switch at any time.',
+                icon: CheckCircle,
+                title: 'Quality output',
+                body: 'We review everything before delivery. Code is tested, copy is polished, files are ready to use.',
               },
               {
-                icon: Network,
-                title: 'Universal price tracking',
-                body: 'Stocks, ETFs, and crypto — priced globally. CEX feeds, DEX pricing providers, and traditional market data in one place.',
-              },
-              {
-                icon: ScanSearch,
-                title: 'AI screenshot import',
-                body: 'Upload a portfolio screenshot from any broker, bank, or app worldwide — AI reads it and creates all holdings automatically.',
-              },
-              {
-                icon: Users,
-                title: 'Human ↔ Agent handoff',
-                body: 'Agents populate data via MCP, you review and refine through the UI. Seamless data ownership between humans and AI.',
+                icon: Sparkles,
+                title: 'AI-powered',
+                body: 'We use the best AI tools available to augment our work — giving you more for less.',
               },
               {
                 icon: Code2,
-                title: 'Full MCP server',
-                body: 'Comprehensive API for accounts, holdings, institutions, blockchain wallets, and tokens — accessible to any MCP-capable agent.',
+                title: 'Technical depth',
+                body: "Our team is engineering-first. We can take on complex technical problems that most agencies can't handle.",
+              },
+              {
+                icon: Globe,
+                title: 'Remote & async',
+                body: "Work with us from anywhere. We communicate clearly, document everything, and don't need micromanagement.",
+              },
+              {
+                icon: Users,
+                title: 'Flexible scope',
+                body: 'Small one-off task or a multi-month engagement — we adapt to what you need without long-term lock-in.',
               },
             ].map((feature, i) => (
               <FadeIn key={feature.title} delay={i * 0.04}>
@@ -575,124 +453,45 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── PRICING ── */}
-      <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* ── CONTACT ── */}
+      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <FadeIn className="text-center mb-12">
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse" />
-              Currently in beta
-            </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
-              Simple, transparent pricing
+              Ready to get started?
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-xl mx-auto">
-              Free for humans. Pay-per-use for agents.
+              Tell us about your project and we'll get back to you within 24 hours. No commitment
+              required.
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <FadeIn>
-              <div className="rounded-2xl border-2 border-gray-200 p-8 h-full flex flex-col">
-                <div className="flex items-start justify-between mb-6 gap-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <Monitor className="w-4 h-4 text-gray-600" />
-                      <h3 className="text-xl font-bold text-gray-900">Web App</h3>
-                    </div>
-                    <p className="text-gray-500 text-sm">For humans, in the browser.</p>
-                  </div>
-                  <div className="text-right flex-shrink-0">
-                    <span className="text-4xl font-extrabold text-gray-900">$0</span>
-                    <span className="text-gray-400 text-sm ml-1">/mo</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-2.5 mb-8 flex-1">
-                  {[
-                    'Full dashboard access',
-                    'Crypto exchange integrations',
-                    'Blockchain wallet import',
-                    'AI screenshot import',
-                    'Multi-currency dashboard',
-                    'Stocks, ETFs & crypto price tracking',
-                    'Human ↔ Agent data handoff',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 text-sm text-gray-700">
-                      <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <button
-                  type="button"
-                  onClick={() => window.open('https://app.scani.xyz', '_blank')}
-                  className="group w-full inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-gray-700 transition-colors"
-                >
-                  Create free account
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </button>
+          <FadeIn delay={0.05}>
+            <div className="rounded-2xl border border-gray-200 p-10 flex flex-col items-center gap-6 text-center">
+              <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <Mail className="w-6 h-6 text-gray-700" />
               </div>
-            </FadeIn>
-
-            <FadeIn delay={0.05}>
-              <div className="rounded-2xl border-2 border-indigo-200 bg-indigo-50/40 p-8 h-full flex flex-col">
-                <div className="flex items-start justify-between mb-6 gap-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <Code2 className="w-4 h-4 text-indigo-600" />
-                      <h3 className="text-xl font-bold text-gray-900">Agentic / MCP</h3>
-                    </div>
-                    <p className="text-gray-500 text-sm">For AI agents, via x402 paywall.</p>
-                  </div>
-                  <div className="text-right flex-shrink-0">
-                    <span className="text-2xl font-bold text-gray-900">Pay-per-use</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-2.5 mb-8 flex-1">
-                  {[
-                    'Full MCP server over HTTPS',
-                    'Agent self-registration',
-                    'Micro-payments via x402',
-                    'No subscription required',
-                    'Pay only for what agents use',
-                    'Compatible with Claude, GPT, any LLM',
-                    'Human ↔ Agent data handoff via UI',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 text-sm text-gray-700">
-                      <CheckCircle className="w-4 h-4 text-indigo-500 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="rounded-xl bg-indigo-950/8 border border-indigo-200 p-4 mb-4">
-                  <div className="flex items-center gap-2 mb-1">
-                    <CreditCard className="w-4 h-4 text-indigo-600" />
-                    <span className="text-xs font-bold text-indigo-700 uppercase tracking-wide">
-                      x402 Protocol
-                    </span>
-                  </div>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Agents attach a payment to each MCP request. No API billing setup, no monthly
-                    invoices — just micro-payments on Base (Ethereum L2).
-                  </p>
-                </div>
-
+              <div>
+                <p className="text-sm text-gray-500 mb-2">Drop us a line at</p>
                 <a
-                  href="https://app.scani.xyz/settings"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group w-full inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-colors"
+                  href="mailto:hello@scani.xyz"
+                  className="text-2xl font-bold text-gray-900 hover:text-indigo-600 transition-colors"
                 >
-                  Get API key
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  hello@scani.xyz
                 </a>
               </div>
-            </FadeIn>
-          </div>
+              <p className="text-sm text-gray-400 max-w-sm">
+                Describe your project, timeline, and budget. We'll respond with a plan and a quote.
+              </p>
+              <a
+                href="mailto:hello@scani.xyz"
+                className="group inline-flex items-center gap-2 bg-gray-900 text-white px-7 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-700 transition-colors shadow-sm"
+              >
+                Send us a message
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -712,85 +511,70 @@ export default function App() {
                 <span className="text-[15px] font-semibold tracking-tight">Scani</span>
               </a>
               <p className="text-sm text-gray-500 leading-relaxed">
-                Personal finance management with an AI-first MCP interface. Aggregate your entire
-                financial life, then let AI agents work with it.
+                An AI-powered agency that builds, writes, and ships — faster than a traditional
+                team.
               </p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
               <div>
-                <p className="font-semibold text-gray-900 mb-3">Product</p>
+                <p className="font-semibold text-gray-900 mb-3">Services</p>
                 <ul className="space-y-2 text-gray-500">
                   <li>
-                    <a href="#webapp" className="hover:text-gray-900 transition-colors">
-                      Web App
+                    <a href="#services" className="hover:text-gray-900 transition-colors">
+                      Development
                     </a>
                   </li>
                   <li>
-                    <a href="#for-agents" className="hover:text-gray-900 transition-colors">
-                      For Agents
+                    <a href="#services" className="hover:text-gray-900 transition-colors">
+                      Copywriting
                     </a>
                   </li>
                   <li>
-                    <a href="#integrations" className="hover:text-gray-900 transition-colors">
-                      Integrations
+                    <a href="#services" className="hover:text-gray-900 transition-colors">
+                      AI integrations
                     </a>
                   </li>
                   <li>
-                    <a href="#pricing" className="hover:text-gray-900 transition-colors">
-                      Pricing
+                    <a href="#services" className="hover:text-gray-900 transition-colors">
+                      Automation
                     </a>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <p className="font-semibold text-gray-900 mb-3">Developers</p>
+                <p className="font-semibold text-gray-900 mb-3">Work with us</p>
                 <ul className="space-y-2 text-gray-500">
                   <li>
-                    <a
-                      href="https://api.scani.xyz/mcp"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-gray-900 transition-colors"
-                    >
-                      MCP Server
+                    <a href="#platforms" className="hover:text-gray-900 transition-colors">
+                      Upwork
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://app.scani.xyz/settings"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-gray-900 transition-colors"
-                    >
-                      API Keys
+                    <a href="#platforms" className="hover:text-gray-900 transition-colors">
+                      Fiverr
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" className="hover:text-gray-900 transition-colors">
+                      Direct contract
                     </a>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <p className="font-semibold text-gray-900 mb-3">App</p>
+                <p className="font-semibold text-gray-900 mb-3">Company</p>
                 <ul className="space-y-2 text-gray-500">
                   <li>
-                    <a
-                      href="https://app.scani.xyz"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-gray-900 transition-colors"
-                    >
-                      Open app
+                    <a href="#how-it-works" className="hover:text-gray-900 transition-colors">
+                      How it works
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://app.scani.xyz"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-gray-900 transition-colors"
-                    >
-                      Sign up free
+                    <a href="mailto:hello@scani.xyz" className="hover:text-gray-900 transition-colors">
+                      Contact
                     </a>
                   </li>
                 </ul>
@@ -800,15 +584,7 @@ export default function App() {
 
           <div className="mt-12 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
             <p>© {new Date().getFullYear()} Scani. All rights reserved.</p>
-            <p>
-              Built for the era of AI agents.{' '}
-              <a
-                href="https://app.scani.xyz"
-                className="underline hover:text-gray-600 transition-colors"
-              >
-                Get started free →
-              </a>
-            </p>
+            <p>AI-powered agency. Built to deliver.</p>
           </div>
         </div>
       </footer>
