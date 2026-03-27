@@ -149,7 +149,7 @@ export default function App() {
           >
             <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">
               <Sparkles className="w-3 h-3" />
-              AI-powered agency
+              Expert dev agency
             </span>
           </motion.div>
 
@@ -170,9 +170,9 @@ export default function App() {
             transition={{ duration: 0.45, delay: 0.12 }}
             className="text-xl text-gray-500 max-w-2xl leading-relaxed mb-10"
           >
-            Scani is an AI-powered agency that delivers dev work, copywriting, design, and more —
-            faster and at higher quality than a traditional team. Hire us on Upwork, Fiverr, or
-            directly.
+            Scani is a boutique agency that delivers dev work, copywriting, design, and more —
+            with quality and speed you won't find at a traditional firm. Hire us on Upwork, Fiverr,
+            or directly.
           </motion.p>
 
           <motion.div
@@ -202,7 +202,7 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.28 }}
             className="mt-10 flex flex-wrap gap-5 text-sm text-gray-500"
           >
-            {['AI-powered delivery', 'Fast turnaround', 'Quality guaranteed'].map((item) => (
+            {['Expert delivery', 'Fast turnaround', 'Quality guaranteed'].map((item) => (
               <span key={item} className="flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                 {item}
@@ -245,8 +245,8 @@ export default function App() {
               },
               {
                 icon: Sparkles,
-                title: 'AI integrations',
-                body: 'Add AI capabilities to your existing product — chatbots, summarization, classification, data extraction. We build the integration end-to-end.',
+                title: 'Integrations',
+                body: 'Connect your product with third-party services and build custom integrations — chatbots, data extraction, external APIs. We handle it end-to-end.',
               },
               {
                 icon: Globe,
@@ -316,7 +316,7 @@ export default function App() {
               {
                 step: '02',
                 title: 'We deliver',
-                body: 'Our AI-powered team gets to work. We keep you updated and ask clarifying questions when needed. Fast turnaround.',
+                body: 'Our team gets to work. We keep you updated and ask clarifying questions when needed. Fast turnaround.',
               },
               {
                 step: '03',
@@ -401,7 +401,7 @@ export default function App() {
                 Why Scani
               </h2>
               <p className="text-gray-500 text-lg max-w-2xl">
-                We're not a traditional agency. AI is at the core of how we work.
+                We're not a traditional agency. Speed and quality are at the core of how we work.
               </p>
             </div>
           </FadeIn>
@@ -411,7 +411,7 @@ export default function App() {
               {
                 icon: Zap,
                 title: 'Fast delivery',
-                body: 'AI-assisted workflows mean we move faster than a traditional team. Days, not weeks.',
+                body: 'Our streamlined workflows mean we move faster than a traditional team. Days, not weeks.',
               },
               {
                 icon: CheckCircle,
@@ -420,8 +420,8 @@ export default function App() {
               },
               {
                 icon: Sparkles,
-                title: 'AI-powered',
-                body: 'We use the best AI tools available to augment our work — giving you more for less.',
+                title: 'Efficient',
+                body: 'We use the best tools available to get the job done right — giving you more for less.',
               },
               {
                 icon: Code2,
@@ -511,8 +511,8 @@ export default function App() {
                 <span className="text-[15px] font-semibold tracking-tight">Scani</span>
               </a>
               <p className="text-sm text-gray-500 leading-relaxed">
-                An AI-powered agency that builds, writes, and ships — faster than a traditional
-                team.
+                A boutique agency that builds, writes, and ships — faster and sharper than a
+                traditional team.
               </p>
             </div>
 
@@ -532,7 +532,7 @@ export default function App() {
                   </li>
                   <li>
                     <a href="#services" className="hover:text-gray-900 transition-colors">
-                      AI integrations
+                      Integrations
                     </a>
                   </li>
                   <li>
@@ -584,7 +584,7 @@ export default function App() {
 
           <div className="mt-12 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
             <p>© {new Date().getFullYear()} Scani. All rights reserved.</p>
-            <p>AI-powered agency. Built to deliver.</p>
+            <p>Boutique agency. Built to deliver.</p>
           </div>
         </div>
       </footer>
